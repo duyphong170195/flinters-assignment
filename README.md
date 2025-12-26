@@ -26,8 +26,8 @@ CSV stream<br>
 ↓<br>
 Producer parses rows<br>
 ↓ shard by campaign_id<br>
-BlockingQueue[0] → Worker0 → HashMap<Key, Value> key là campaign_id, value là Agg(sumImpressions, sumClicks, sumConvensions, ...) 
-BlockingQueue[1] → Worker1 → HashMap1<Key, Value> key là campaign_id, value là Agg(sumImpressions, sumClicks, sumConvensions, ...)
+BlockingQueue[0] → Worker0 → HashMap<Key, Value> key là campaign_id, value là Agg(sumImpressions, sumClicks, sumConvensions, ...) <br> 
+BlockingQueue[1] → Worker1 → HashMap1<Key, Value> key là campaign_id, value là Agg(sumImpressions, sumClicks, sumConvensions, ...) <br>
 ...<br>
 BlockingQueue[N-1] → WorkerN-1 → HashMapN-1<Key, Value> key là campaign_id, value là Agg(sumImpressions, sumClicks, sumConvensions, ...)<br>
 ↓<br>
