@@ -26,10 +26,10 @@ CSV stream<br>
 ↓<br>
 Producer parses rows<br>
 ↓ shard by campaign_id<br>
-BlockingQueue[0] → Worker0 → HashMap0  
-BlockingQueue[1] → Worker1 → HashMap1
+BlockingQueue[0] → Worker0 → HashMap<Key, Value> key là campaign_id, value là Agg(sumImpressions, sumClicks, sumConvensions, ...) 
+BlockingQueue[1] → Worker1 → HashMap1<Key, Value> key là campaign_id, value là Agg(sumImpressions, sumClicks, sumConvensions, ...)
 ...<br>
-BlockingQueue[N-1] → WorkerN-1 → HashMapN-1<br>
+BlockingQueue[N-1] → WorkerN-1 → HashMapN-1<Key, Value> key là campaign_id, value là Agg(sumImpressions, sumClicks, sumConvensions, ...)<br>
 ↓<br>
 Sau khi xong: scan tất cả HashMap shard để lấy top10
 
